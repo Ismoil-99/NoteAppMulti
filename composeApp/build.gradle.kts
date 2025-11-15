@@ -30,16 +30,23 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(compose.material3)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.ui)
+            implementation(compose.material)
+            implementation(compose.materialIconsExtended)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation("com.arkivanov.decompose:decompose:3.4.0")
+            implementation("com.arkivanov.decompose:extensions-compose:3.4.0")
+
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -77,7 +84,8 @@ android {
 dependencies {
     debugImplementation(compose.uiTooling)
     implementation("com.arkivanov.decompose:decompose:3.4.0")
-    implementation("com.arkivanov.decompose:decompose-compose-multiplatform:3.4.0")
+    implementation("com.arkivanov.decompose:extensions-compose:3.4.0")
+
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 }
 
