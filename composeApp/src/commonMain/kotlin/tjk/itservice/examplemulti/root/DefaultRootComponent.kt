@@ -8,7 +8,7 @@ import com.arkivanov.decompose.router.stack.pop
 import com.arkivanov.decompose.router.stack.pushNew
 import com.arkivanov.decompose.value.Value
 import kotlinx.serialization.Serializable
-import tjk.itservice.examplemulti.detail.DefaultDetailComponent
+import tjk.itservice.examplemulti.detail.DefaultAddComponent
 import tjk.itservice.examplemulti.edit.DefaultEditComponent
 import tjk.itservice.examplemulti.main.DefaultMainComponent
 import tjk.itservice.examplemulti.model.Note
@@ -40,7 +40,7 @@ class DefaultRootComponent(
         )
 
         is Config.Detail -> RootComponent.Child.Detail(
-            DefaultDetailComponent(
+            DefaultAddComponent(
                 componentContext = componentContext,
                 post = config.post,
                 onFinished = { nav.pop() },

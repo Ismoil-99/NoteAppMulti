@@ -19,8 +19,8 @@ import com.arkivanov.decompose.extensions.compose.subscribeAsState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NoteDetailScreen(
-    component: DetailComponent,
+fun NoteAddScreen(
+    component: AddComponent,
     modifier: Modifier = Modifier,
 ) {
     val state by component.model.subscribeAsState()
@@ -29,7 +29,7 @@ fun NoteDetailScreen(
         modifier = modifier,
         topBar = {
             TopAppBar(
-                title = { Text("NoteDetailScreen") },
+                title = { Text("NoteAddScreen") },
                 navigationIcon = {
                     IconButton(onClick = component::onBackPressed) {
                         Icon(Icons.Outlined.ArrowBackIosNew, contentDescription = "Back")
@@ -44,7 +44,7 @@ fun NoteDetailScreen(
                 .padding(32.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Text("DetailScreen")
+            Text("AddScreen")
         }
     }
 }

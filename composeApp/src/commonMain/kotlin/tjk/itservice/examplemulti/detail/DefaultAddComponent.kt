@@ -5,11 +5,11 @@ import com.arkivanov.decompose.value.MutableValue
 import com.arkivanov.decompose.value.Value
 import tjk.itservice.examplemulti.model.Note
 
-class DefaultDetailComponent(
+class DefaultAddComponent(
     componentContext: ComponentContext,
     post: Note,
     private val onFinished: () -> Unit,
-) : DetailComponent, ComponentContext by componentContext {
+) : AddComponent, ComponentContext by componentContext {
 
     override val model: Value<Note> = MutableValue(post)
 

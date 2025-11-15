@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
-import tjk.itservice.examplemulti.detail.NoteDetailScreen
+import tjk.itservice.examplemulti.detail.NoteAddScreen
 import tjk.itservice.examplemulti.edit.NoteEditScreen
 import tjk.itservice.examplemulti.main.MainScreen
 
@@ -18,7 +18,7 @@ fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
     ) {
         when (val child = it.instance) {
             is RootComponent.Child.Main -> MainScreen(component = child.component,modifier)
-            is RootComponent.Child.Detail -> NoteDetailScreen(component = child.component,modifier)
+            is RootComponent.Child.Detail -> NoteAddScreen(component = child.component,modifier)
             is RootComponent.Child.Edit -> NoteEditScreen(component = child.component,modifier)
         }
     }
