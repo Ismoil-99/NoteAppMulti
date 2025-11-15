@@ -1,6 +1,5 @@
 package tjk.itservice.examplemulti.detail
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,10 +11,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.outlined.ArrowBackIosNew
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -37,7 +36,7 @@ import com.arkivanov.decompose.extensions.compose.subscribeAsState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NoteAddScreen(
+fun NoteDetailScreen(
     component: AddComponent,
     modifier: Modifier = Modifier,
 ) {
@@ -46,7 +45,6 @@ fun NoteAddScreen(
     var descNote by remember { mutableStateOf("") }
 
     Scaffold(
-        modifier = modifier,
         topBar = {
             TopAppBar(
                 title = { Text("NoteAddScreen") },
@@ -54,12 +52,17 @@ fun NoteAddScreen(
                     IconButton(onClick = component::onBackPressed) {
                         Icon(Icons.Outlined.ArrowBackIosNew, contentDescription = "Back")
                     }
+                },
+                actions = {
+                    IconButton(onClick = {
+
+                    }) {
+                        Icon(Icons.Default.Check, contentDescription = "Save")
+                    }
                 }
             )
-        },
+        }
     ) { paddingValues ->
-
-        // Используем paddingValues от Scaffold, чтобы контент не ушел под TopAppBar
         Box(
             modifier = Modifier
                 .fillMaxSize()
