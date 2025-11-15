@@ -9,9 +9,13 @@ class DefaultAddComponent(
     componentContext: ComponentContext,
     post: Note,
     private val onFinished: () -> Unit,
+    private val onEditeNote:(Note) -> Unit
 ) : AddComponent, ComponentContext by componentContext {
 
     override val model: Value<Note> = MutableValue(post)
 
     override fun onBackPressed() = onFinished()
+    override fun editNote(note: Note) {
+        onEditeNote(note)
+    }
 }

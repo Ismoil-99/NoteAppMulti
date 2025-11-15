@@ -7,4 +7,6 @@ interface AddComponent {
     val model: Value<Note>
 
     fun onBackPressed()
+
+    fun editNote(note: Note)
 }

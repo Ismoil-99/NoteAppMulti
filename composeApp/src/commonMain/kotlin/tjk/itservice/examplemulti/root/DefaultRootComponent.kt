@@ -44,6 +44,9 @@ class DefaultRootComponent(
                 componentContext = componentContext,
                 post = config.post,
                 onFinished = { nav.pop() },
+                onEditeNote = { note ->
+                    nav.pushNew(Config.Edit(note))
+                }
             )
         )
         is Config.Edit -> RootComponent.Child.Edit(

@@ -55,7 +55,7 @@ fun NoteDetailScreen(
                 },
                 actions = {
                     IconButton(onClick = {
-
+                        component.editNote(state)
                     }) {
                         Icon(Icons.Default.Check, contentDescription = "Save")
                     }
